@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    {% for contact in contacts_list %}
+    <tr>
+        <td>{{ contact.department }}</td>
+        <td>{{ contact.number }}</td>
+        <td>{{ contact.email }}</td>
+    </tr>
+     {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        {% for stud in stud_list %}
+        <tr>
+            <td>{{stud.firstname}}</td>
+            <td>{{stud.lastname}}</td>
+            <td>{{stud.age}}</td>
+            <td>{{stud.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
