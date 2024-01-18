@@ -1,0 +1,14 @@
+{% extends 'base1.html' %}
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+    {% if username %}
+        <h3>Привет {{ username }}, мы рады видеть Вас в нашем магазине ! <br>
+        Обновления ассортимента будут приходить по адресу: {{ mail }}</h3>
+    {% endif %}
+    <form action="{{ url_for('logout') }}" method="GET">
+        <button type="submit" >Выход из сессии (будут удалены cookie)</button>
+    </form>
+{% endblock %}

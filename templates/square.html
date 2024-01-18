@@ -1,0 +1,15 @@
+{% extends 'base1.html' %}
+{% block title %}
+Квадрат числа
+{% endblock %}
+{% block content %}
+    {% if data %}
+    <p>Квадрат числа {{ data.number }} равен {{ data.square }}</p>
+    {% else %}
+    <form method="post">
+        <input type="number" name="number" placeholder="Число">
+        <input type="submit" value="Отправить">
+    </form>
+    {% endif %}
+{% endblock %}
+
