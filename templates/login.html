@@ -1,0 +1,42 @@
+{% extends 'base1.html' %}
+{% block title %}
+Регистрация
+{% endblock %}
+{% block content %}
+    <h1>Регистрация</h1>
+    <form metod="POST" action="{{ url_for('login') }}" >
+        {{ form.csrf_token }}
+        {% for filed in form if filed.name != 'csrf_token' %}
+        <p>
+            {{ filed.label }}<br>
+            {{ filed }}
+            {% if filed.errors %}
+            <ul class="alrert alert-danger">
+                {% for error in filed.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </p>
+        {% endfor %}
+        <input type="submit" value="Отправить" />
+        </p>
+    </form>
+{% endblock %}
+<!--            {{ form.firstname.label }}<br>-->
+<!--            {{ form.firstname (size=32) }}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            {{ form.lastname.label }}<br>-->
+<!--            {{ form.lastname (size=32) }}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            {{ form.email.label }}<br>-->
+<!--            {{ form.email (size=32) }}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            {{ form.password.label }}<br>-->
+<!--            {{ form.password (size=32) }}-->
+<!--        </p>-->
+<!--
+
